@@ -45,6 +45,7 @@ li {
     color: white;
     padding: 15px 10px;
     justify-content: flex-start;
+    list-style: number;
 
 }
 li:hover{

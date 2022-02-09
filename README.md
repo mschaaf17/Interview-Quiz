@@ -1,7 +1,7 @@
 # Interview-Quiz
 
 ## Purpose
-A website that generates a new question regarding coding and saves your score at the end. 
+A website that quizzes the user on JavaScript and reports a score at the end. 
 
 ## Built With
 * HTML
