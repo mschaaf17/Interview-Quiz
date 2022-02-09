@@ -1,0 +1,53 @@
+* {
+    margin: 20px;
+    text-align: center;
+}
+
+.highscore {
+    display: flex;
+    justify-content: space-between;
+}
+
+.highscore-btn {
+    color: plum;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+}
+.highscore-btn:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.next-btn {
+    color: white;
+    background-color: plum;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+.next-btn:hover{
+    color: black;
+    cursor: pointer;
+}
+
+/*list elements*/
+.listEl {
+    display: flex;
+    flex-direction: column;
+    
+}
+li {
+    display: flex;
+    
+    border: solid 1px purple;
+    border-radius: 10px;
+    background-color: purple;
+    color: white;
+    padding: 15px 10px;
+    justify-content: flex-start;
+
+}
+li:hover{
+    background-color: plum;
+    color: black;
+}
