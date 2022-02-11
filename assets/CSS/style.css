@@ -30,13 +30,13 @@
 
 }
 
-.startquiz {
+button {
     color: white;
     background-color: plum;
     padding: 10px 15px;
     border-radius: 10px;
 }
-.startquiz:hover{
+button:hover{
     color: black;
     cursor: pointer;
 }

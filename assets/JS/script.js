@@ -1,16 +1,14 @@
 var timerEl = document.getElementById('time-sec');
-var startquiz = document.querySelector('.startquiz');
+var startBtn = document.createElement("button");
 
-//the time is shown in the header as a count down clock
-//I click on an answer to the question
-//if the answer is correct, more time is added and I go to the next question
-    //points should be added to my score everytime I get the answer correct
-//else if the is wrong, time is decreased and I go to the next question..loop?
 
-//click on start here to clear the first part and then start the time
+
+startBtn.textContent = "Start Quiz";
+document.body.appendChild(startBtn);
 
 var instruction = document.getElementById('instruction').setAttribute('value','JavaScript Quiz');
-startquiz.addEventListener("click", function(event){
+
+startBtn.addEventListener("click", function(event){
   var startQuizBtn = event.target;
     if (startQuizBtn) {  
         timer(); 
