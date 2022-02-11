@@ -18,6 +18,10 @@
     color: black;
     cursor: pointer;
 }
+.timer {
+    display: flex;
+    justify-content: space-around;
+}
 
 .next-btn {
     color: white;
@@ -51,4 +55,8 @@ li {
 li:hover{
     background-color: plum;
     color: black;
+}
+
+.red {
+    color: red;
 }
