@@ -23,6 +23,12 @@
     display: flex;
     justify-content: space-around;
 }
+#instruction {
+    border: none;
+    font-weight: bold;
+    font-size: 42px;
+
+}
 
 .startquiz {
     color: white;

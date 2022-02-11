@@ -1,5 +1,6 @@
 var timerEl = document.getElementById('time-sec');
 var startquiz = document.querySelector('.startquiz');
+
 //the time is shown in the header as a count down clock
 //I click on an answer to the question
 //if the answer is correct, more time is added and I go to the next question
@@ -8,13 +9,17 @@ var startquiz = document.querySelector('.startquiz');
 
 //click on start here to clear the first part and then start the time
 
-startquiz.addEventListener("click", function(event){
-    var startQuizBtn = event.target;
-    if (startQuizBtn === true) {
-        
-    }
-    console.log(startQuizBtn);
-});
+var instruction = document.getElementById('instruction').setAttribute('value','JavaScript Quiz');
+
+
+
+
+//startquiz.addEventListener("click", function(event){
+  //  var startQuizBtn = event.target;
+    //if (startQuizBtn === true) {   
+    //}
+    //console.log(startQuizBtn);
+//});
 
 
 function timer() {
