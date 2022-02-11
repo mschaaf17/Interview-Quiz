@@ -11,21 +11,22 @@
 <body>
     <header class = "highscore">
         <!--this button could just be a link to external page by using css!-->
-        <button class="highscore-btn">View High Scores</button>
+        <a href= "./question1.html" class="highscore-link">View High Scores</a>
         <section class="timer">
             <div id = "time-text"> Time:</div>
             <div id ="time-sec"></div>
+
         </section>  
     </header>
 
-    <div class = "startquiz">
+    <div class = "instruction">
         <h1>Coding Quiz Challenge</h1>
         <p>Try to answer the following code-related questions within the time limit.
         </br>Keep in mind the incorrect answers will penalize your score/time by ten seconds!
         </p>
-        <form action="./question1.html">
-            <input class="next-btn" type="submit" value="Start here"/>
-        </form>
+        <div>
+            <button class="startquiz">Start Here!</button>
+        </div>
     </div>
 
     

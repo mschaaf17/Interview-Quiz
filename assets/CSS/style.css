@@ -8,24 +8,29 @@
     justify-content: space-between;
 }
 
-.highscore-btn {
+.highscore-link {
     color: plum;
     background-color: white;
     border: none;
     font-weight: bold;
+    text-decoration: none;
 }
-.highscore-btn:hover{
+.highscore-link:hover{
     color: black;
     cursor: pointer;
 }
+.timer {
+    display: flex;
+    justify-content: space-around;
+}
 
-.next-btn {
+.startquiz {
     color: white;
     background-color: plum;
     padding: 10px 15px;
     border-radius: 10px;
 }
-.next-btn:hover{
+.startquiz:hover{
     color: black;
     cursor: pointer;
 }
@@ -51,4 +56,8 @@ li {
 li:hover{
     background-color: plum;
     color: black;
+}
+
+.red {
+    color: red;
 }
