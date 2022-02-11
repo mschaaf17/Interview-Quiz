@@ -10,16 +10,17 @@ var startquiz = document.querySelector('.startquiz');
 //click on start here to clear the first part and then start the time
 
 var instruction = document.getElementById('instruction').setAttribute('value','JavaScript Quiz');
+startquiz.addEventListener("click", function(event){
+  var startQuizBtn = event.target;
+    if (startQuizBtn) {  
+        timer(); 
+    }
+    console.log(startQuizBtn);
+});
 
 
 
 
-//startquiz.addEventListener("click", function(event){
-  //  var startQuizBtn = event.target;
-    //if (startQuizBtn === true) {   
-    //}
-    //console.log(startQuizBtn);
-//});
 
 
 function timer() {
@@ -35,5 +36,5 @@ var countInterval = setInterval (function() {
     };
 }, 1000);
 }
-timer();
+
 
