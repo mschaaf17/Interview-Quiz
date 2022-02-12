@@ -6,11 +6,14 @@ var startBtn = document.createElement("button");
 startBtn.textContent = "Start Quiz";
 document.body.appendChild(startBtn);
 
-var instruction = document.getElementById('instruction').setAttribute('value','JavaScript Quiz');
+var instructions = 'Please click the button to continue';
+var information = document.getElementById('information');
+information.textContent = instructions;
 
 startBtn.addEventListener("click", function(event){
   var startQuizBtn = event.target;
     if (startQuizBtn) {  
+        //clear instruction
         timer(); 
     }
     console.log(startQuizBtn);
