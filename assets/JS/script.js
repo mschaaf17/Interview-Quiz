@@ -18,43 +18,34 @@ questionEl.textContent = instructions;
 questionContainerEl.textContent = infoOnInstructions;
 
 
-var listEl = document.createElement("ol");
-
-
-
+/*var listEl = document.createElement("ol");
 //answers for first question
 var li1 = document.createElement("li");
 var li2 = document.createElement("li");
 var li3 = document.createElement("li");
 var li4 = document.createElement("li");
-
 //append the list
 listEl.appendChild(li1);
 listEl.appendChild(li2);
 listEl.appendChild(li3);
 listEl.appendChild(li4);
+*/
 
 
 //starts the timer by clicking start button
-startBtn.addEventListener("click", function(event){
-  var startQuizBtn = event.target;
-  var quizInterval = setInterval(function() {
-    if (startQuizBtn) {  
-        //clear instructions
-        clearInterval(quizInterval);
-        questionEl.textContent= question;
-        questionContainerEl.textContent = "";
-        clearInterval(startBtn);
-        startBtn.setAttribute("style", "display:none");
-        shuffledQuestions = quizQues.sort(() => Math.random() - .5)
-        currentQuestionIndex = 0;
-        choices.appendChild(listEl);
-        timer(); 
-        setNextQuestion();
-        console.log(startQuizBtn);
-    }
-}, 1000);
-});
+startBtn.addEventListener("click", startGame)
+function startGame() {
+    console.log('started')
+    startBtn.setAttribute("style", "display: none");
+    shuffledQuestions = quizQues.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0;
+    questionContainerEl.textContent ="";
+    timer();
+    setNextQuestion()
+    
+}
+
+
 
 //timer function
 var timeLeft = 60;
@@ -73,18 +64,41 @@ var countInterval = setInterval (function() {
 
 //setting next questions
 function setNextQuestion() {
+//resetState()
 showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 function showQuestion(question) {
 questionEl.innerText = question.question
+question.answer.forEach(answer => {
+    const button = document.createElement('button')
+    button.innerText = answer.text
+    button.classList.add('btn')
+    if(answer.correct) {
+        button.dataset.correct = answer.correct
+    }
+    button.addEventListener("click", selectAnswer)
+    listEl.appendChild(button)
+})
 }
 
 
 //selecting answer
 
-function selectAnswer() {
+function selectAnswer(e) {
 
-}//quiz questions
+}
+/*
+function resetState() {
+    nextButton.classList.add('hide')
+    while(answerButtonsEl,firstChild) {
+        answerButtonsEl.removeChild
+        (answerButtonsEl.firstChild)
+    }
+}*/
+
+
+
+//quiz questions
 const quizQues = [
     {
 question: 'What is 2+2?',
