@@ -7,6 +7,7 @@ startBtn.textContent = "Start Quiz";
 document.body.appendChild(startBtn);
 
 
+
 //displays instructions for quiz
 
 var information = document.getElementById('information');
@@ -30,7 +31,7 @@ var li3 = document.createElement("li");
 var li4 = document.createElement("li");
 
 //append ordered list
-choices.appendChild(listEl);
+
 //append the list
 listEl.appendChild(li1);
 listEl.appendChild(li2);
@@ -48,7 +49,8 @@ startBtn.addEventListener("click", function(event){
         information.textContent= question1;
         moreInfo.textContent = "";
         clearInterval(startBtn);
-        startBtn.textContent = "";
+        startBtn.setAttribute("style", "display:none");
+        choices.appendChild(listEl);
         timer(); 
         console.log(startQuizBtn);
     }
