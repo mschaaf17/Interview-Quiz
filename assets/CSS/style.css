@@ -68,6 +68,6 @@ li:hover{
     color: black;
 }
 
-.red {
-    color: red;
+.hide {
+    display: none;
 }
