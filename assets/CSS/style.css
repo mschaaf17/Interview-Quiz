@@ -23,11 +23,14 @@
     display: flex;
     justify-content: space-around;
 }
-#instruction {
+#information {
     border: none;
     font-weight: bold;
     font-size: 42px;
 
+}
+#more-info {
+    font-size: 20px;
 }
 
 button {
