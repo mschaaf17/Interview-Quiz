@@ -19,7 +19,23 @@ moreInfo.textContent = infoOnInstructions;
 
 //quiz questions
 var question1 = 'What is the answer?'
-var choices1= 'yaya!'
+var listEl = document.createElement("ol");
+
+//answers for first question
+var li1 = document.createElement("li");
+li1.textContent= 'fine';
+li1.textContent ='yas!';
+var li2 = document.createElement("li");
+var li3 = document.createElement("li");
+var li4 = document.createElement("li");
+
+//append ordered list
+choices.appendChild(listEl);
+//append the list
+listEl.appendChild(li1);
+listEl.appendChild(li2);
+listEl.appendChild(li3);
+listEl.appendChild(li4);
 
 
 //starts the timer by clicking start button
@@ -30,7 +46,7 @@ startBtn.addEventListener("click", function(event){
         //clear instructions
         clearInterval(quizInterval);
         information.textContent= question1;
-        moreInfo.textContent = choices1;
+        moreInfo.textContent = "";
         clearInterval(startBtn);
         startBtn.textContent = "";
         timer(); 
