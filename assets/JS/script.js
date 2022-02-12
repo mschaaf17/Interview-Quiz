@@ -1,28 +1,24 @@
 var timerEl = document.getElementById('time-sec');
 var startBtn = document.createElement("button");
+var results = document.getElementById('results');
+var questionContainerEl = document.getElementById('question-container')
+var questionEl = document.getElementById('question');
+const answerButtonsEl = document.getElementById('answer-buttons');
+let shuffledQuestions, currentQuestionIndex
 
 //start button 
 startBtn.textContent = "Start Quiz";
 document.body.appendChild(startBtn);
 
 
-
 //displays instructions for quiz
-
-var information = document.getElementById('information');
-var moreInfo = document.getElementById('more-info');
 var instructions = 'Please click the button to continue';
 var infoOnInstructions = 'Read carefully';
-information.textContent = instructions;
-moreInfo.textContent = infoOnInstructions;
+questionEl.textContent = instructions;
+questionContainerEl.textContent = infoOnInstructions;
 
 
-//quiz questions
-var question1 = 'What is the answer?'
 var listEl = document.createElement("ol");
-var question2 ='have you eaten today?'
-
-
 
 
 
@@ -31,8 +27,6 @@ var li1 = document.createElement("li");
 var li2 = document.createElement("li");
 var li3 = document.createElement("li");
 var li4 = document.createElement("li");
-
-
 
 //append the list
 listEl.appendChild(li1);
@@ -48,20 +42,23 @@ startBtn.addEventListener("click", function(event){
     if (startQuizBtn) {  
         //clear instructions
         clearInterval(quizInterval);
-        information.textContent= question1;
-        moreInfo.textContent = "";
+        questionEl.textContent= question;
+        questionContainerEl.textContent = "";
         clearInterval(startBtn);
         startBtn.setAttribute("style", "display:none");
+        shuffledQuestions = quizQues.sort(() => Math.random() - .5)
+        currentQuestionIndex = 0;
         choices.appendChild(listEl);
         timer(); 
+        setNextQuestion();
         console.log(startQuizBtn);
     }
 }, 1000);
 });
 
+//timer function
 var timeLeft = 60;
 function timer() {
-
 var countInterval = setInterval (function() {
     if (timeLeft === 0) {
         clearInterval(countInterval);
@@ -74,7 +71,35 @@ var countInterval = setInterval (function() {
 }, 1000);
 }
 
-listEl.addEventListener("click", function(event){
+//setting next questions
+function setNextQuestion() {
+showQuestion(shuffledQuestions[currentQuestionIndex])
+}
+function showQuestion(question) {
+questionEl.innerText = question.question
+}
+
+
+//selecting answer
+
+function selectAnswer() {
+
+}//quiz questions
+const quizQues = [
+    {
+question: 'What is 2+2?',
+answers: [ 
+    {text: '4', correct: true},
+    {text: '22', correct: false}
+]
+    }
+]
+
+
+
+
+
+/*listEl.addEventListener("click", function(event){
     var choices = event.target;
     console.log(choices);
         if (choices === li1) {
@@ -85,4 +110,4 @@ listEl.addEventListener("click", function(event){
             timeLeft = timeLeft - 10;
             timeLeft--;
         }
-})
+}) */
