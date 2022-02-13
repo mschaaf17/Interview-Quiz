@@ -30,17 +30,18 @@
     font-size: 42px;
 
 }
-#question-container {
+#question-container, #directions{
     font-size: 20px;
 }
 
-button {
+
+button, .try-again-btn {
     color: white;
     background-color: plum;
     padding: 10px 15px;
     border-radius: 10px;
 }
-button:hover{
+button:hover, .try-again-btn:hover{
     color: black;
     cursor: pointer;
 }
@@ -71,3 +72,5 @@ li:hover{
 .hide {
     display: none;
 }
+
+

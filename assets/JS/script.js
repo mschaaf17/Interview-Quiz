@@ -1,21 +1,19 @@
 var timerEl = document.getElementById('time-sec');
-var startBtn = document.createElement("button");
+var startBtn = document.getElementById("start-button");
 var results = document.getElementById('results');
+var directions = document.getElementById('directions');
 var questionContainerEl = document.getElementById('question-container')
 var questionEl = document.getElementById('question');
 const answerButtonsEl = document.getElementById('answer-buttons');
 var shuffledQuestions, currentQuestionIndex
 
 //start button 
-startBtn.textContent = "Start Quiz";
-document.body.appendChild(startBtn);
+
 
 
 //displays instructions for quiz
-var instructions = 'Please click the button to continue';
-var infoOnInstructions = 'Read carefully';
-questionEl.textContent = instructions;
-questionContainerEl.textContent = infoOnInstructions;
+questionEl.textContent = 'Please click the button to continue;'
+directions.textContent = 'Read carefully';
 answerButtonsEl.setAttribute("style", "display: none");
 
 
@@ -40,10 +38,10 @@ function startGame() {
     startBtn.setAttribute("style", "display: none");
     shuffledQuestions = quizQues.sort(() => Math.random() - .5)
     currentQuestionIndex = 0;
-    questionContainerEl.textContent ="";
+    directions.textContent ="";
     answerButtonsEl.setAttribute("style", "display: visible")
     timer();
-    setNextQuestion()
+    setNextQuestion();
     
 }
 
@@ -54,6 +52,7 @@ var countInterval = setInterval (function() {
     if (timeLeft === 0) {
         clearInterval(countInterval);
         timerEl.textContent = 'Times out';
+        window.location.href="./question1.html";
     }
     else {
         timerEl.textContent = timeLeft;
@@ -101,20 +100,26 @@ setStatusClass(document.body, correct)
 Array.from(answerButtonsEl.children).forEach(button => {
     setStatusClass(button, button.dataset.correct)
 })
+if(shuffledQuestions.length > currentQuestionIndex + 1) {
+    window.location.href="./question1.html";
+}
 }
 
 function setStatusClass(element, correct) {
-    clearStatusClass(element)
+ //   clearStatusClass(element)
     if(correct) {
-        element.classList.add('correct')
-    } else {
-        element.classList.add('wrong')
+        timeLeft  = timeLeft + 10; 
+         timeLeft ++;
+    } 
+    else {
+        timeLeft = timeLeft - 10;
+            timeLeft--;
     }
+    if (timeLeft === 0) {
+        window.location.href="./question1.html";
+    }
+    
 }
-
-function clearStatusClass(element) {}
-
-
 
 //quiz questions
 const quizQues = [
@@ -124,24 +129,29 @@ answers: [
     {text: '4', correct: true},
     {text: '22', correct: false}
 ]
+    },
+    {
+        question: 'String values must be enclosed within____ when being assigned to variable.',
+        answers: [
+            {text: 'commas', correct: false},
+            {text: 'curly brackets', correct: false},
+            {text: 'quotes', correct: true},
+            {text: 'parenthesis', correct: false}
+        ]
     }
+    
 ]
 
 
 
+//info for high scores page
+var initalsInput = document.querySelector('#initals-input');
+var logScoreButton = document.querySelector('#log-score-btn')
 
+logScoreButton.addEventListenter("click", logScore) 
+    function logScore() {
+    console.log(logScoreButton);
+    var initals = initalsInput.value.trim();
 
-/*listEl.addEventListener("click", function(event){
-    var choices = event.target;
-    console.log(choices);
-        if (choices === li1) {
-         timeLeft  = timeLeft + 10; 
-         timeLeft ++;
-        }
-        else {
-            timeLeft = timeLeft - 10;
-            timeLeft--;
-        }
-}) */
-
-
+localStorage.setItem("UserInitials", JSON.stringify (initals));
+};
