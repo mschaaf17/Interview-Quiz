@@ -74,19 +74,4 @@ button:hover, .try-again-btn:hover{
     display: none;
 }
 
-.correct {
-    background-color: mediumaquamarine;
-}
-.incorrect {
-    background-color: red;
-}
-
-footer {
-    display: flex;
-    justify-content: flex-start;
-    color: palevioletred;
-    font-weight: bold;
-    font-size: 20px;
-
-}
 

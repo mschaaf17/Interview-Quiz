@@ -1,4 +1,4 @@
-var timerEl = document.getElementById('time-sec');
+var timerEl = document.querySelector('.time-sec');
 var questionEl = document.getElementById('question');
 var choices = Array.from(document.querySelectorAll('.choice-text'));
 const listEl = document.querySelector('.listEl');
@@ -42,8 +42,9 @@ const MAX_QUESTIONS = 3
 function startGame() {
     score = 0;
     availableQuestion = [...questions]
-    setNextQuestion();
     timer();
+    setNextQuestion();
+    
 }
 
 //timer function
@@ -92,13 +93,17 @@ choiceOptions.forEach(choice => {
             selectedChoice = e.target.children[1]
         }
         
-        const selectedAnswer = selectedChoice.dataset['number']
+        var selectedAnswer = selectedChoice.dataset['number']
 
         var currentAnswer = currentQuestion.answer 
         console.log(selectedAnswer, currentAnswer)
 
-        if(e.target = questions.answer) {
-            timerEl = timerEl + 10;
+        
+        if(selectedAnswer == currentQuestion.answer) {
+        timeLeft  = timeLeft + 10;
+        }
+        else  {
+            timeLeft = timeLeft - 10;
         }
         setNextQuestion();
     })
