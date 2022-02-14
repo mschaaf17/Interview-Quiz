@@ -1,4 +1,4 @@
-# Interview-Quiz
+# JavaScript-Quiz
 
 ## Purpose
 A website that quizzes the user on JavaScript and reports a score at the end. 
