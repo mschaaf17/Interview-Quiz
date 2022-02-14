@@ -30,7 +30,7 @@
     font-size: 42px;
 
 }
-#question-container, #directions{
+#choice-container, #directions{
     font-size: 20px;
 }
 
@@ -52,7 +52,7 @@ button:hover, .try-again-btn:hover{
     flex-direction: column;
     
 }
-li {
+#choice-container {
     display: flex;
     
     border: solid 1px purple;
@@ -64,13 +64,29 @@ li {
     list-style: number;
 
 }
-li:hover{
+#choice-container:hover{
     background-color: plum;
     color: black;
+    cursor: pointer;
 }
 
 .hide {
     display: none;
 }
 
+.correct {
+    background-color: mediumaquamarine;
+}
+.incorrect {
+    background-color: red;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-start;
+    color: palevioletred;
+    font-weight: bold;
+    font-size: 20px;
+
+}
 
