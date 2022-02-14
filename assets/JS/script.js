@@ -2,6 +2,7 @@ var timerEl = document.querySelector('.time-sec');
 var questionEl = document.getElementById('question');
 var choices = Array.from(document.querySelectorAll('.choice-text'));
 const listEl = document.querySelector('.listEl');
+var score = document.querySelector('#yourScore');
 
 var currentQuestion= {}
 var acceptingAnswers = true
@@ -40,7 +41,6 @@ const MAX_QUESTIONS = 3
 
     
 function startGame() {
-    score = 0;
     availableQuestion = [...questions]
     timer();
     setNextQuestion();
@@ -55,6 +55,10 @@ var countInterval = setInterval (function() {
         clearInterval(countInterval);
         timerEl.textContent = 'Times out';
         window.location.href="./scores.html";
+        localStorage.setItem('yourScore', JSON.stringify (timeLeft))
+        return window.location.assign('./scores.html')
+        
+        
     }
     else {
         timerEl.textContent = timeLeft;
@@ -65,12 +69,12 @@ var countInterval = setInterval (function() {
 
 function setNextQuestion() {
 if(availableQuestion.length === 0) {
-    localStorage.setItem('mostRecentScore', timeLeft)
+    localStorage.setItem('yourScore', JSON.stringify (timeLeft))
     return window.location.assign('./scores.html')
 }
 const questionIndex = Math.floor(Math.random() * availableQuestion.length)
 currentQuestion = availableQuestion[questionIndex]
-question.innerText = currentQuestion.question
+questionEl.innerText = currentQuestion.question
 choices.forEach(choice => {
     const number = choice.dataset['number']
     choice.innerText = currentQuestion['choice' + number]
@@ -113,7 +117,9 @@ choiceOptions.forEach(choice => {
      
 
 //end
-//quiz questions
 
 
 startGame()
+//var submitInitialsBtn = document.querySelector('#log-initials-btn');
+
+

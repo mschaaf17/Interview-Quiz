@@ -11,12 +11,19 @@
 <body>
 
     <div>
-        <h1>Scores:</h1>
-        <div id="your-score"></div>
+        <div id = "highScores">
+        <h1 class= "finalScore">Leaderboard</h1>
+        <div class ="finalScore">Your Score:</div>
+        <div id ='yourScore'></div>
+        
+        <ul id = "highScoresList"></ul>
+        </div>
+    </div>
+
         <form>
-            <label for = 'initals'>Your Score:</label>
+            <label for = 'initials'>Initials:</label>
             <input type="text" name = "initials" id = "initials-input" placeholder="Type initials here">
-            <button id = "log-score-btn">Submit</button>   
+            <button id = "log-initials-btn" type ="submit">Submit</button>   
         </form>
         <!-- each list needs to be a button link for Javascript not a next button-->
         <form action ="./index.html">
@@ -28,5 +35,6 @@
 
 
     <script src ="./assets/JS/script.js"></script>
+    <script src ="assets/highscore.js"></script>
 </body>
 </html>
