@@ -30,7 +30,7 @@
     font-size: 42px;
 
 }
-#choice-container, #directions{
+.choice-container, #directions{
     font-size: 20px;
 }
 
@@ -52,7 +52,7 @@ button:hover, .try-again-btn:hover{
     flex-direction: column;
     
 }
-#choice-container {
+.choice-container {
     display: flex;
     
     border: solid 1px purple;
@@ -64,7 +64,7 @@ button:hover, .try-again-btn:hover{
     list-style: number;
 
 }
-#choice-container:hover{
+.choice-container:hover{
     background-color: plum;
     color: black;
     cursor: pointer;
