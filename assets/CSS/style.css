@@ -47,12 +47,12 @@ button:hover, .try-again-btn:hover{
 }
 
 /*list elements*/
-.listEl {
+ol, .listEl {
     display: flex;
     flex-direction: column;
     
 }
-.choice-container {
+li, .choice-container {
     display: flex;
     
     border: solid 1px purple;
@@ -61,15 +61,18 @@ button:hover, .try-again-btn:hover{
     color: white;
     padding: 15px 10px;
     justify-content: flex-start;
-    list-style: number;
+
 
 }
-.choice-container:hover{
+ .choice-container:hover{
     background-color: plum;
     color: black;
     cursor: pointer;
 }
 
+li:hover {
+    background-color: plum;
+}
 .hide {
     display: none;
 }
